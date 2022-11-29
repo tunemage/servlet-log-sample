@@ -1,10 +1,10 @@
-# jersey-guice-sample(WIP)
-
-
+# jersey-guice-sample
 
 ## 概要
 
-Tomcat9でのJerseyの最小サンプルです。
+Tomcat9でのJerseyとGuiceが同居している場合の最小サンプルです。
+
+guice-bridge等による
 
 ## 使い方
 
@@ -26,12 +26,21 @@ cp target/tomcat-sample.war /usr/local/tomcat/webapps
 
 http://localhost:8081/tomcat-sample/api/hello
 
+以下のURLに入るとHello Guice Servletと表示される。
 
-以下のURLは、404画面が表示される（JerseyConfig.javaでリソースのパッケージを制限しているため）
-
-http://localhost:8081/tomcat-sample/api/hello2
+http://localhost:8081/tomcat-sample/helloGuiceServlet
 
 ## その他
+
+### JerseyとGuiceの混在について
+
+上述のように、JerseyとGuiceは同居できる。
+
+JerseyはHK2というDIフレームワークに依存しているため、GuiceとHK2という2種類のDIフレームワークが同居している状態となる
+
+Jersey配下のオブジェクトにもGuiceを用いたDIを使うには[guice-bridge](https://javaee.github.io/hk2/guice-bridge.html)を使用する必要がある。
+
+### 参考にする場合の注意
 
 Tomcat9系で検証する必要があったため、Tomcat9のイメージをベースにしています。
 

@@ -10,6 +10,6 @@ public class JaxRsResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Hello JAX-RS";
+        return "Hello JAX-RS 1";
     }
 }

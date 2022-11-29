@@ -9,11 +9,13 @@ import javax.servlet.ServletException;
 import java.io.PrintWriter;
 import java.io.IOException;
 
-@WebServlet("/HelloServlet")
-public class HelloServlet extends HttpServlet {
+import com.google.inject.Singleton;
+
+@Singleton
+public class HelloGuiceServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         PrintWriter out = response.getWriter();
-        out.println("Hello Servlet");
+        out.println("Hello Guice Servlet");
     }
 }
