@@ -1,4 +1,4 @@
-# jersey-guice-sample
+# servlet-log-sample(WIP)
 
 ## 概要
 
